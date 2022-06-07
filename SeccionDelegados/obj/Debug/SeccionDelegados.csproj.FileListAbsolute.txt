@@ -1,0 +1,7 @@
+C:\Users\david.montano\source\repos\SeccionDelegados\SeccionDelegados\bin\Debug\SeccionDelegados.exe.config
+C:\Users\david.montano\source\repos\SeccionDelegados\SeccionDelegados\bin\Debug\SeccionDelegados.exe
+C:\Users\david.montano\source\repos\SeccionDelegados\SeccionDelegados\bin\Debug\SeccionDelegados.pdb
+C:\Users\david.montano\source\repos\SeccionDelegados\SeccionDelegados\obj\Debug\SeccionDelegados.csproj.AssemblyReference.cache
+C:\Users\david.montano\source\repos\SeccionDelegados\SeccionDelegados\obj\Debug\SeccionDelegados.csproj.CoreCompileInputs.cache
+C:\Users\david.montano\source\repos\SeccionDelegados\SeccionDelegados\obj\Debug\SeccionDelegados.exe
+C:\Users\david.montano\source\repos\SeccionDelegados\SeccionDelegados\obj\Debug\SeccionDelegados.pdb
