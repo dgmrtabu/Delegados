@@ -13,8 +13,9 @@ namespace SeccionDelegados
         delegate List<int> DelegadosConRetornoListaEntero(int x);
         static void Main(string[] args)
         {
-           // DelegadosSinRetorno d1 = ImpresionTablaMultiplicar;
-            EjemploDelegado();
+            // DelegadosSinRetorno d1 = ImpresionTablaMultiplicar;
+            //EjemploDelegado();
+            EjemploDelegadosLamda();
             Console.Read();
         }
 
@@ -38,6 +39,39 @@ namespace SeccionDelegados
             var lista = d3(5);
             Console.WriteLine("Tabla multiplicar 5");
             //Console.WriteLine(string.Join("-", lista));
+            Console.WriteLine(string.Join("-", d3(10)));
+
+
+        }
+
+        static void EjemploDelegadosLamda()
+        {
+            DelegadosSinRetorno d1 = (numero, hasta) =>
+            {
+                for (int i = 0; i <= hasta; i++)
+                {
+                    Console.WriteLine($"{numero} x {i} = {numero * i}");
+                }
+                Console.WriteLine("-------------------------------------");
+                Console.WriteLine($"La Tabla de Multiplicar del {numero}");
+            };
+
+            d1(3, 10);
+            d1 = (numero1, numero2) =>
+            {
+                Console.WriteLine("Multiplicacion");
+                Console.WriteLine($"{numero1} x {numero2} = {numero1 * numero2}");
+                Console.WriteLine("-------------------------------------");
+                Console.WriteLine("");
+            };
+            d1(3, 10);
+
+            DelegadosConRetornoEntero d2 = (numero) => numero * numero;
+            Console.WriteLine($"Cuadrado numero 5 es {d2(5)}");
+            Console.WriteLine($"Cuadrado numero 5 es {d2(25)}");
+
+            DelegadosConRetornoListaEntero d3 = (numero) => Enumerable.Range(1, 10).Select(x => x * numero).ToList();
+            Console.WriteLine("Tabla de Multiplicar 10");
             Console.WriteLine(string.Join("-", d3(10)));
         }
 
