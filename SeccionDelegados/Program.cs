@@ -15,8 +15,77 @@ namespace SeccionDelegados
         {
             // DelegadosSinRetorno d1 = ImpresionTablaMultiplicar;
             //EjemploDelegado();
-            EjemploDelegadosLamda();
+            //EjemploDelegadosLamda();
+            EjemploAcccion();
             Console.Read();
+        }
+
+        static void EjemploAcccion()
+        {
+            Action<int, int> d1 = (numero, hasta) =>
+            {
+                Console.WriteLine($"La tabla de multiplicar del {numero}");
+                for(int i = 1; i<= hasta; i++)
+                {
+                    Console.WriteLine($"{numero} x {i} = {numero * i}");
+                }
+                Console.WriteLine("----------------------------------");
+                Console.WriteLine();
+            };
+            
+            d1(3, 10);
+
+            d1 = (numero1, numero2) =>
+            {
+                Console.WriteLine("Multiplicacion");
+                Console.WriteLine($"{numero1} x {numero2} = {numero1 * numero2 }");
+                Console.WriteLine("-----------------------------------");
+                Console.WriteLine();
+            };
+            d1(3, 10);
+
+            d1 = ImpresionTablaMultiplicar;
+            d1(10, 10);
+            d1 = ImpresionMultiplicaicon;
+            d1(15, 15);
+
+            static void EjemploDelegadosLamda()
+            {
+                DelegadosSinRetorno d1 = (numero, hasta) =>
+                {
+                    for (int i = 0; i <= hasta; i++)
+                    {
+                        Console.WriteLine($"{numero} x {i} = {numero * i}");
+                    }
+                    Console.WriteLine("-------------------------------------");
+                    Console.WriteLine($"La Tabla de Multiplicar del {numero}");
+                };
+
+                d1(3, 10);
+                d1 = (numero1, numero2) =>
+                {
+                    Console.WriteLine("Multiplicacion");
+                    Console.WriteLine($"{numero1} x {numero2} = {numero1 * numero2}");
+                    Console.WriteLine("-------------------------------------");
+                    Console.WriteLine("");
+                };
+                d1(3, 10);
+
+                DelegadosSinRetorno delegandoLamda = (numero, hasta) =>
+                {
+                    Console.WriteLine($"La tabla de multiplicar {numero}");
+                    for (int i = 1; i <= hasta; i++)
+                    {
+                        Console.WriteLine($"{numero} x {i} = {numero * i}");
+                    }
+                    Console.WriteLine("-------------------------------------");
+                    Console.WriteLine("");
+                };
+
+                d1 = new Action<int, int>(delegandoLamda);
+                d1(17, 5);
+            }
+
         }
 
         static void EjemploDelegado() 
